@@ -1,0 +1,493 @@
+--> By Lilybaeum#9164
+--> Credits to people who made inf jump, ctrl click tp, and infinite yield!
+--> thank you for using this script, have fun and enjoy!
+
+local library = loadstring(game:HttpGetAsync("https://pastebin.com/raw/HYcfs6KC"))()
+local UIS = game:GetService("UserInputService")
+local Player = game.Players.LocalPlayer
+local Mouse = Player:GetMouse()
+
+local MM = library:CreateWindow("Main Menu")
+local MM2 = library:CreateWindow("Second Menu")
+local S = library:CreateWindow("Gear Shop")
+local S2 = library:CreateWindow("Trail Shop")
+local UNI = library:CreateWindow("Universal")
+local Credits = library:CreateWindow("Credits")
+
+MM:Section("-=Damage Destroyers=-")
+
+MM:Button("Tunnel", function()
+    game:GetService("Workspace").Tunnel.Damage:Destroy()
+end)
+
+MM:Button("The Hole", function()
+    game:GetService("Workspace").Hole.Damage:Destroy()
+end)
+
+MM:Button("The Climb", function()
+    game:GetService("Workspace").Climb.Damage:Destroy()
+end)
+
+MM:Button("Conveyor", function()
+    game:GetService("Workspace").Conveyor.Damage:Destroy()
+end)
+
+MM:Button("Tower", function()
+    game:GetService("Workspace").Tower.Damage:Destroy()
+end)
+
+MM:Button("The Obby", function()
+    for i, v in pairs(game:GetService("Workspace").Obby.Damage:GetChildren()) do
+        if v:FindFirstChild("TextPart") then
+            local Auschwitzenhagen = Instance.new("Part")
+            
+            Auschwitzenhagen.Parent = v
+            Auschwitzenhagen.Name = "Auschwitzenhagen"
+            Auschwitzenhagen.Size = v.TextPart.Size
+            Auschwitzenhagen.Anchored = true
+            Auschwitzenhagen.CFrame = v.TextPart.CFrame
+            Auschwitzenhagen.Material = Enum.Material.Grass
+            Auschwitzenhagen.Color = Color3.fromRGB(0, 255, 0)
+            
+            v.TextPart:Destroy()
+        end
+    end
+end)
+
+MM:Button("The Bridge", function()
+    for i, v in pairs(game.Workspace.World1:GetChildren()) do
+        for i=1,5 do
+            if v:FindFirstChild("Number") then
+                v.Number:Destroy()
+            end
+        end
+    end
+
+    local Bridge = game.Workspace.Bridge
+
+for i=1,5 do
+    if Bridge:FindFirstChild("LavaZone") then
+        Bridge.LavaZone:Destroy()
+    elseif Bridge:FindFirstChild("IceZone") then
+        Bridge.IceZone:Destroy()
+    elseif Bridge:FindFirstChild("AcidZone") then
+        Bridge.AcidZone:Destroy()
+    elseif Bridge:FindFirstChild("ElectricZone") then
+        Bridge.ElectricZone:Destroy()
+    elseif Bridge:FindFirstChild("DarkZone") then
+        Bridge.DarkZone:Destroy()
+    end
+end
+end)
+
+MM:Section("-=Main Shit=-")
+
+MM:Button("Ad Blocker", function()
+    if game.Workspace:FindFirstChild("Ads") then
+        game:GetService("Workspace").Ads:Destroy()
+    end
+end)
+
+MM:Button("Remove Dev Products", function()
+    if game.Workspace:FindFirstChild("Products") then
+        game:GetService("Workspace").Products:Destroy()
+    end
+end)
+
+MM:Button("Remove Robux Eggs", function()
+    if game.Workspace.Eggs:FindFirstChild("Robux") and game.Workspace.Eggs:FindFirstChild("Cheap") then
+        game.Workspace.Eggs.Robux:Destroy()
+        game.Workspace.Eggs.Cheap:Destroy()
+    end
+end)
+
+MM:Button("Open Gear Shop", function()
+    game.Players.LocalPlayer.PlayerGui.MainGui.Frame.Gears.Visible = true
+end)
+
+MM:Button("Open Trail Shop", function()
+    game.Players.LocalPlayer.PlayerGui.MainGui.Frame.Trails.Visible = true
+end)
+
+local t1 = MM:Toggle('Win Autofarm', {flag = "toggle1"})
+
+coroutine.wrap(function()
+    while wait() do
+        if MM.flags.toggle1 == true then
+            for i, v in pairs(game:GetService("Workspace").Wins:GetChildren()) do
+            wait(0.5)
+            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,game:GetService("Workspace").Wins.Truss,0)
+            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,game:GetService("Workspace").Wins.Truss,1)
+            end
+        end
+    end
+end)()
+
+MM2:Section("-=Miscellaneous=-")
+
+MM2:Button("Remove GUI Dev Prod.", function()
+    game.Players.LocalPlayer.PlayerGui.MainGui.Frame.LeftFrame.Visible = false
+    game.Players.LocalPlayer.PlayerGui.MainGui.Frame.RightFrame.Promotion.Visible = false
+    game.Players.LocalPlayer.PlayerGui.MainGui.Frame.RightFrame["150w"].Visible = false
+    game.Players.LocalPlayer.PlayerGui.MainGui.Frame.RightFrame["100w"].Visible = false
+    game.Players.LocalPlayer.PlayerGui.MainGui.Frame.RightFrame["50w"].Visible = false
+    game.Players.LocalPlayer.PlayerGui.MainGui.Frame.RightFrame["1w"].Visible = false
+end)
+
+MM2:Section("-=Win Teleports=-")
+
+MM2:Button("Tunnel", function()
+    Player.Character.HumanoidRootPart.CFrame = CFrame.new(-40, -5, -732)
+end)
+
+MM2:Button("Bridge", function()
+    Player.Character.HumanoidRootPart.CFrame = CFrame.new(39, -8, -740)
+end)
+
+MM2:Button("Tower", function()
+    Player.Character.HumanoidRootPart.CFrame = CFrame.new(301, 431, -49)
+end)
+
+MM2:Button("Obby", function()
+    Player.Character.HumanoidRootPart.CFrame = CFrame.new(253, -8, 53)
+end)
+
+MM2:Button("Climb", function()
+    Player.Character.HumanoidRootPart.CFrame = CFrame.new(-41, 120, 658)
+end)
+
+MM2:Button("Conveyor", function()
+    Player.Character.HumanoidRootPart.CFrame = CFrame.new(-708, -8, -50.)
+end)
+
+MM2:Button("The Hole", function()
+    Player.Character.HumanoidRootPart.CFrame = CFrame.new(36, -2000, 110)
+end)
+
+S:Section("-=Gear Shop=-")
+
+S:Button("Burger [1W]", function()
+    local args = {
+        [1] = 1,
+        [2] = "Burger",
+        [3] = "Gears"
+    }
+    
+    game:GetService("ReplicatedStorage").GearShop.Purchase:FireServer(unpack(args))    
+end)
+
+S:Button("Ice Cream [1W]", function()
+    local args = {
+        [1] = 1,
+        [2] = "Ice Cream",
+        [3] = "Gears"
+    }
+    
+    game:GetService("ReplicatedStorage").GearShop.Purchase:FireServer(unpack(args))    
+end)
+
+S:Button("Bloxy Cola [1W]", function()
+    local args = {
+        [1] = 1,
+        [2] = "Bloxy Cola",
+        [3] = "Gears"
+    }
+    
+    game:GetService("ReplicatedStorage").GearShop.Purchase:FireServer(unpack(args))    
+end)
+
+S:Button("Pizza [1W]", function()
+    local args = {
+        [1] = 1,
+        [2] = "Pizza",
+        [3] = "Gears"
+    }
+    
+    game:GetService("ReplicatedStorage").GearShop.Purchase:FireServer(unpack(args))    
+end)
+
+S:Button("Bloxilicious [1W]", function()
+    local args = {
+        [1] = 1,
+        [2] = "Bloxilicious",
+        [3] = "Gears"
+    }
+    
+    game:GetService("ReplicatedStorage").GearShop.Purchase:FireServer(unpack(args))    
+end)
+
+S:Button("Bloxilicious [2W]", function()
+    local args = {
+        [1] = 2,
+        [2] = "Witch Brew",
+        [3] = "Gears"
+    }
+    
+    game:GetService("ReplicatedStorage").GearShop.Purchase:FireServer(unpack(args))       
+end)
+
+S:Button("Money Bag [3W]", function()
+    local args = {
+        [1] = 3,
+        [2] = "Money Bag",
+        [3] = "Gears"
+    }
+    
+    game:GetService("ReplicatedStorage").GearShop.Purchase:FireServer(unpack(args))           
+end)
+
+S:Button("Bang Gun [3W]", function()
+    local args = {
+        [1] = 3,
+        [2] = "Bang Gun",
+        [3] = "Gears"
+    }
+    
+    game:GetService("ReplicatedStorage").GearShop.Purchase:FireServer(unpack(args))               
+end)
+
+S:Button("Saxophone [4W]", function()
+    local args = {
+        [1] = 4,
+        [2] = "Saxophone",
+        [3] = "Gears"
+    }
+    
+    game:GetService("ReplicatedStorage").GearShop.Purchase:FireServer(unpack(args))
+end)
+
+S:Button("Speed Coil [15W]", function()
+    local args = {
+        [1] = 15,
+        [2] = "Speed Coil",
+        [3] = "Gears"
+    }
+    
+    game:GetService("ReplicatedStorage").GearShop.Purchase:FireServer(unpack(args))    
+end)
+
+S:Button("Gravity Coil [15W]", function()
+    local args = {
+        [1] = 15,
+        [2] = "Gravity Coil",
+        [3] = "Gears"
+    }
+    
+    game:GetService("ReplicatedStorage").GearShop.Purchase:FireServer(unpack(args))    
+end)
+
+S2:Section("-=Trail Shop=-")
+
+S2:Button("White Trail [1W]", function()
+    local args = {
+        [1] = "White Trail"
+    }
+    
+    game:GetService("ReplicatedStorage").TrailEvents.BuyItem:InvokeServer(unpack(args))
+end)
+
+S2:Button("Black Trail [2W]", function()
+    local args = {
+        [1] = "Black Trail"
+    }
+    
+    game:GetService("ReplicatedStorage").TrailEvents.BuyItem:InvokeServer(unpack(args))
+end)
+
+S2:Button("Yellow Trail [3W]", function()
+    local args = {
+        [1] = "Yellow Trail"
+    }
+    
+    game:GetService("ReplicatedStorage").TrailEvents.BuyItem:InvokeServer(unpack(args))
+end)
+
+S2:Button("Violet Trail [4W]", function()
+    local args = {
+        [1] = "Violet Trail"
+    }
+    
+    game:GetService("ReplicatedStorage").TrailEvents.BuyItem:InvokeServer(unpack(args))
+end)
+
+S2:Button("Turquoise Trail [5W]", function()
+    local args = {
+        [1] = "Turquoise Trail"
+    }
+    
+    game:GetService("ReplicatedStorage").TrailEvents.BuyItem:InvokeServer(unpack(args))
+end)
+
+S2:Button("Navy Blue Trail [6W]", function()
+    local args = {
+        [1] = "Navy Blue Trail"
+    }
+    
+    game:GetService("ReplicatedStorage").TrailEvents.BuyItem:InvokeServer(unpack(args))
+end)
+
+S2:Button("Green Trail [7W]", function()
+    local args = {
+        [1] = "Green Trail"
+    }
+    
+    game:GetService("ReplicatedStorage").TrailEvents.BuyItem:InvokeServer(unpack(args))
+end)
+
+S2:Button("Brown Trail [8W]", function()
+    local args = {
+        [1] = "Brown Trail"
+    }
+    
+    game:GetService("ReplicatedStorage").TrailEvents.BuyItem:InvokeServer(unpack(args))
+end)
+
+S2:Button("Blue Trail [9W]", function()
+    local args = {
+        [1] = "Blue Trail"
+    }
+    
+    game:GetService("ReplicatedStorage").TrailEvents.BuyItem:InvokeServer(unpack(args))
+end)
+
+S2:Button("Red Trail [10W]", function()
+    local args = {
+        [1] = "Red Trail"
+    }
+    
+    game:GetService("ReplicatedStorage").TrailEvents.BuyItem:InvokeServer(unpack(args))
+end)
+
+S2:Button("Purpled Trail [12W]", function()
+    local args = {
+        [1] = "Purpled Trail"
+    }
+    
+    game:GetService("ReplicatedStorage").TrailEvents.BuyItem:InvokeServer(unpack(args))
+end)
+
+S2:Button("Pink Trail [15W]", function()
+    local args = {
+        [1] = "Pink Trail"
+    }
+    
+    game:GetService("ReplicatedStorage").TrailEvents.BuyItem:InvokeServer(unpack(args))
+end)
+
+S2:Button("Orange Trail [16W]", function()
+    local args = {
+        [1] = "Orange Trail"
+    }
+    
+    game:GetService("ReplicatedStorage").TrailEvents.BuyItem:InvokeServer(unpack(args))
+end)
+
+S2:Button("Crimson Trail [20W]", function()
+    local args = {
+        [1] = "Crimson Trail"
+    }
+    
+    game:GetService("ReplicatedStorage").TrailEvents.BuyItem:InvokeServer(unpack(args))
+end)
+
+S2:Button("Rainbow Trail [50W]", function()
+    local args = {
+        [1] = "Rainbow Trail"
+    }
+    
+    game:GetService("ReplicatedStorage").TrailEvents.BuyItem:InvokeServer(unpack(args))
+end)
+
+UNI:Section("-=Sliders=-")
+
+local FOVSlider = UNI:Slider("WalkSpeed", {
+   min = 1;
+   max = 500;
+   flag = 'wspd'
+}, function(v)
+   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v;
+end)
+
+local FOVSlider = UNI:Slider("JumpPower", {
+    min = 1;
+    max = 500;
+    flag = 'jmpp'
+ }, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v;
+end)
+
+local FOVSlider = UNI:Slider("HipHeight", {
+    min = 1;
+    max = 500;
+    flag = 'hiph'
+ }, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.HipHeight = v;
+end)
+
+local FOVSlider = UNI:Slider("Gravity", {
+    min = 1;
+    max = 500;
+    flag = 'grvty'
+ }, function(v)
+    Workspace.Gravity = v;
+end)
+
+local FOVSlider = UNI:Slider("FOV", {
+   min = math.floor(workspace.CurrentCamera.FieldOfView);
+   max = 120;
+   flag = 'fov'
+}, function(v)
+   workspace.CurrentCamera.FieldOfView = v;
+end)
+
+UNI:Section("-=Popular Scripts=-")
+
+UNI:Button("Sword Aura", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/Hcq6sntE'),true))()
+end)
+
+UNI:Button("Infinite Yield", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+UNI:Button("Ctrl+Click TP", function()
+function GetCharacter()
+   return game.Players.LocalPlayer.Character
+end
+
+function Teleport(pos)
+   local Char = GetCharacter()
+   if Char then
+       Char:MoveTo(pos)
+   end
+end
+
+
+UIS.InputBegan:Connect(function(input)
+   if input.UserInputType == Enum.UserInputType.MouseButton1 and UIS:IsKeyDown(Enum.KeyCode.LeftControl) then
+       Teleport(Mouse.Hit.p)
+   end
+end)
+end)
+
+UNI:Button("Infinite Jump", function()
+_G.JumpHeight = 50;
+ 
+function Action(Object, Function) if Object ~= nil then Function(Object); end end
+ 
+UIS.InputBegan:connect(function(UserInput)
+    if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
+        Action(Player.Character.Humanoid, function(self)
+            if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
+                Action(self.Parent.HumanoidRootPart, function(self)
+                    self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
+                end)
+            end
+        end)
+    end
+end)
+end)
+
+Credits:Section("Script by")
+Credits:Section("Tion_D#6044")
+Credits:Section("I love Kevin-_-")
