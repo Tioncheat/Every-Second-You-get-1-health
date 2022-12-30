@@ -62,7 +62,6 @@ coroutine.wrap(function()
     while wait() do
         if MM.flags.toggle1 == true then
             for i, v in pairs(game:GetService("Workspace").Wins:GetChildren()) do
-            wait(0.5)
             firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,game:GetService("Workspace").Wins.Truss,0)
             firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,game:GetService("Workspace").Wins.Truss,1)
             end
