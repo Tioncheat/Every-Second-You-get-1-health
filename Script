@@ -14,73 +14,8 @@ local S2 = library:CreateWindow("Trail Shop")
 local UNI = library:CreateWindow("Universal")
 local Credits = library:CreateWindow("Credits")
 
-MM:Section("-=Damage Destroyers=-")
 
-MM:Button("Tunnel", function()
-    game:GetService("Workspace").Tunnel.Damage:Destroy()
-end)
-
-MM:Button("The Hole", function()
-    game:GetService("Workspace").Hole.Damage:Destroy()
-end)
-
-MM:Button("The Climb", function()
-    game:GetService("Workspace").Climb.Damage:Destroy()
-end)
-
-MM:Button("Conveyor", function()
-    game:GetService("Workspace").Conveyor.Damage:Destroy()
-end)
-
-MM:Button("Tower", function()
-    game:GetService("Workspace").Tower.Damage:Destroy()
-end)
-
-MM:Button("The Obby", function()
-    for i, v in pairs(game:GetService("Workspace").Obby.Damage:GetChildren()) do
-        if v:FindFirstChild("TextPart") then
-            local Auschwitzenhagen = Instance.new("Part")
-            
-            Auschwitzenhagen.Parent = v
-            Auschwitzenhagen.Name = "Auschwitzenhagen"
-            Auschwitzenhagen.Size = v.TextPart.Size
-            Auschwitzenhagen.Anchored = true
-            Auschwitzenhagen.CFrame = v.TextPart.CFrame
-            Auschwitzenhagen.Material = Enum.Material.Grass
-            Auschwitzenhagen.Color = Color3.fromRGB(0, 255, 0)
-            
-            v.TextPart:Destroy()
-        end
-    end
-end)
-
-MM:Button("The Bridge", function()
-    for i, v in pairs(game.Workspace.World1:GetChildren()) do
-        for i=1,5 do
-            if v:FindFirstChild("Number") then
-                v.Number:Destroy()
-            end
-        end
-    end
-
-    local Bridge = game.Workspace.Bridge
-
-for i=1,5 do
-    if Bridge:FindFirstChild("LavaZone") then
-        Bridge.LavaZone:Destroy()
-    elseif Bridge:FindFirstChild("IceZone") then
-        Bridge.IceZone:Destroy()
-    elseif Bridge:FindFirstChild("AcidZone") then
-        Bridge.AcidZone:Destroy()
-    elseif Bridge:FindFirstChild("ElectricZone") then
-        Bridge.ElectricZone:Destroy()
-    elseif Bridge:FindFirstChild("DarkZone") then
-        Bridge.DarkZone:Destroy()
-    end
-end
-end)
-
-MM:Section("-=Main Shit=-")
+MM:Section("-=The Hot Sex=-")
 
 MM:Button("Ad Blocker", function()
     if game.Workspace:FindFirstChild("Ads") then
