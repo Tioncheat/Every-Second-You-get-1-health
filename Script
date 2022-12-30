@@ -1,4 +1,4 @@
---> By Lilybaeum#9164
+--> By Tion_D
 --> Credits to people who made inf jump, ctrl click tp, and infinite yield!
 --> thank you for using this script, have fun and enjoy!
 
@@ -123,6 +123,17 @@ coroutine.wrap(function()
     end
 end)()
 
+local sb = MM:Toggle('Auto Rebirth', {flag = "imgay"})
+
+coroutine.wrap(function()
+    while wait() do
+        if MM.flags.imgay == true then
+            wait(0.5)
+            game.ReplicatedStorage.RebirthEvent:FireServer()
+        
+        end
+    end
+end)()
 MM2:Section("-=Miscellaneous=-")
 
 MM2:Button("Remove GUI Dev Prod.", function()
