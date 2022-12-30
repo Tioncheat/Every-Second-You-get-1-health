@@ -1,6 +1,4 @@
 --> By Tion_D
---> Credits to people who made inf jump, ctrl click tp, and infinite yield!
---> thank you for using this script, have fun and enjoy!
 
 local library = loadstring(game:HttpGetAsync("https://pastebin.com/raw/HYcfs6KC"))()
 local UIS = game:GetService("UserInputService")
@@ -428,4 +426,3 @@ end)
 
 Credits:Section("Script by")
 Credits:Section("Tion_D#6044")
-Credits:Section("I love Kevin-_-")
