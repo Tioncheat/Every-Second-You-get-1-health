@@ -1,4 +1,5 @@
 --> By Tion_D
+--> Credits to people who made inf jump, ctrl click tp, and infinite yield!
 
 local library = loadstring(game:HttpGetAsync("https://pastebin.com/raw/HYcfs6KC"))()
 local UIS = game:GetService("UserInputService")
